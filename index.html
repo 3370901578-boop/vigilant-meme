@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>马卡龙很想你</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      font-family: "Arial", sans-serif;
+      text-align: center;
+      color: #333;
+    }
+    .top-image {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+    }
+    .container {
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-top: 10px;
+      width: 80%;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+    }
+    #secondImage {
+      display: none;
+      margin-top: 30px;
+    }
+    #secondImage img {
+      max-width: 90%;
+      border-radius: 10px;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 第一张图片：开场图 -->
+  <img src="/attachments/fH4S7VvtxxyDkTWK22Mhq.jpeg" alt="开场图" class="top-image">
+
+  <div class="container">
+    <h2>马卡龙有个问题想问你</h2>
+    <label for="answer">小敏最喜欢：</label><br>
+    <input type="text" id="answer" placeholder="请输入答案"><br>
+    <button onclick="checkAnswer()">提交</button>
+  </div>
+
+  <!-- 第二张图片：答对后显示 -->
+  <div id="secondImage">
+    <img src="/attachments/6CxJ9g3KUwzdRwwVBeS3V.jpeg" alt="马卡龙的回应">
+    <h3>马卡龙说：你答对啦！</h3>
+  </div>
+
+  <footer>
+    版权所有 © 2025 马卡龙与楷博
+  </footer>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim();
+      const validAnswers = ["mkb", "马楷博", "马卡龙"];
+      if (validAnswers.includes(input)) {
+        document.querySelector(".container").style.display = "none";
+        document.getElementById("secondImage").style.display = "block";
+      } else {
+        alert("马卡龙说：不是这个哦，再想想！");
+      }
+    }
+  </script>
+</body>
+</html>
