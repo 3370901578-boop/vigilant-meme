@@ -2,30 +2,35 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>马卡龙很想你</title>
+  <title>马卡龙很想你 所以想问你问题</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background-color: #f8f8f8;
+      height: 100%;
       font-family: "Arial", sans-serif;
+      color: #fff;
       text-align: center;
-      color: #333;
+      background: url('fH4S7VvtxxyDkTWK22Mhq.jpeg') no-repeat center center fixed;
+      background-size: cover;
     }
-    .top-image {
-      width: 100%;
-      max-height: 300px;
-      object-fit: cover;
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
     }
     .container {
-      margin: 20px auto;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.9);
+      color: #333;
       padding: 20px;
       border-radius: 10px;
+      max-width: 350px;
       width: 90%;
-      max-width: 400px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     input, button {
       padding: 10px;
@@ -51,31 +56,28 @@
     footer {
       margin-top: 30px;
       font-size: 14px;
-      color: #888;
+      color: #ccc;
     }
   </style>
 </head>
 <body>
+  <div class="overlay">
+    <div class="container">
+      <h2>马卡龙有个问题想问你</h2>
+      <label for="answer">小敏最喜欢：</label><br>
+      <input type="text" id="answer" placeholder="请输入答案"><br>
+      <button onclick="checkAnswer()">提交</button>
+    </div>
 
-  <!-- 第一张图片：开场图 -->
-  <img src="fH4S7VvtxxyDkTWK22Mhq.jpeg" alt="开场图" class="top-image">
+    <div id="secondImage">
+      <img src="6CxJ9g3KUwzdRwwVBeS3V.jpeg" alt="马卡龙的回应">
+      <h3>马卡龙说：你答对啦！</h3>
+    </div>
 
-  <div class="container">
-    <h2>马卡龙有个问题想问你</h2>
-    <label for="answer">小敏最喜欢：</label><br>
-    <input type="text" id="answer" placeholder="请输入答案"><br>
-    <button onclick="checkAnswer()">提交</button>
+    <footer>
+      版权所有 © 2025 马卡龙与楷博
+    </footer>
   </div>
-
-  <!-- 第二张图片：答对后显示 -->
-  <div id="secondImage">
-    <img src="6CxJ9g3KUwzdRwwVBeS3V.jpeg" alt="马卡龙的回应">
-    <h3>马卡龙说：你答对啦！</h3>
-  </div>
-
-  <footer>
-    版权所有 © 2025 马卡龙与楷博
-  </footer>
 
   <script>
     function checkAnswer() {
